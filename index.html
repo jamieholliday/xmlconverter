@@ -22,7 +22,18 @@
     	</div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
-
         <script src="main.js"></script>
+        <script>
+        $(function(){
+            var converter = new Converter({
+                input: '.input',
+                output: '.output'
+            });
+
+            $('.convert').on('click', function(){
+                converter.convert();
+            });
+        });
+        </script>
     </body>
 </html>
