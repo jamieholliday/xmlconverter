@@ -1,3 +1,5 @@
+"use strict";
+
 var Converter = function(options){
 	var inbox = options.input || '.input';
 	var outbox = options.output || '.output';
@@ -12,7 +14,7 @@ Converter.prototype.parseText = function($param){
 	var name = $param.attr('name'),
 		styleChange = $param.attr('allowStyleChange'),
 		font = $param.attr('font'),
-		xml = ['<param type="text" ']; 
+		xml = ['<param type="text" '],
 		value = $param.text();
 
 	//contruct the sections
@@ -33,7 +35,7 @@ Converter.prototype.parseRepository = function($param){
 
 	//grab the values
 	var name = $param.attr('name'),
-		value = $param.text();
+		value = $param.text(),
 		xml = ['<param type="repository" '];
 
 	//construct the sections
@@ -92,3 +94,4 @@ Converter.prototype.convert = function(){
 	xml.push('</flashtemplate>');
 	this.$output.text(xml.join(''));
 };
+
